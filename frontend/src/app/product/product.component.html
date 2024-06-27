@@ -1,0 +1,24 @@
+<div>
+    <h2>Products</h2>
+    <p><a routerLink="/add">Add Product</a></p>
+</div>
+<div class="row" *ngFor="let item of productList">
+    <div class="col-sm-4 mt-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><a [routerLink]="['/getDetails', item.id]">{{item.product_name}} </a></h5>
+          <p class="card-text">{{item.description}}</p>
+          <h5>Brand:- {{item.brand}}</h5>
+          <div>
+            <b>Price:</b> <span>{{item.price}}</span> &nbsp;&nbsp;
+            <b>Rating:</b> <span>{{item.rating}}</span>
+          </div>
+          <br>
+          <div> 
+          <a href="#" class="btn btn-primary">Add to Cart</a> &nbsp;&nbsp;
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>
